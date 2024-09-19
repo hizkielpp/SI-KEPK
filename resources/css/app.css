@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Button */
+.custom-scrollbar {
+    @apply relative;
+}
+.custom-scrollbar::-webkit-scrollbar {
+    @apply w-0;
+}
+.custom-scrollbar:hover::-webkit-scrollbar {
+    @apply w-2;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-lg;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-200 rounded-lg border-2 border-gray-200;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-300;
+}
+
+/* Paginate */
+#mytable_wrapper .dt-paging {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+}
+#mytable_wrapper .dt-paging-button {
+    margin: 0;
+    width: auto;
+    min-width: 32px;
+    text-align: center;
+    font-weight: 300;
+    border-radius: 50%;
+    padding: 0.25rem;
+    aspect-ratio: 1/1;
+    font-size: 14px;
+    outline: none;
+}
+#mytable_wrapper .dt-paging-button:hover {
+    background: none;
+    color: #4b5563 !important;
+    border-color: #d1d5db;
+}
+#mytable_wrapper .dt-paging-button.current {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1/1;
+    padding: 0;
+    margin-left: 0;
+    background-color: #3b82f6;
+    color: white !important;
+    border-color: #2563eb;
+}
+
+/* Child on responsive */
+#mytable span.dtr-title {
+    font-size: 14px !important;
+    color: #374151 !important;
+    font-weight: 600 !important;
+}
+#mytable .dtr-details li {
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+}
