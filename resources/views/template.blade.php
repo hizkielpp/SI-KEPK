@@ -82,33 +82,34 @@
                         {{-- Surat masuk --}}
                         <li>
                             <button type="button"
-                                class="flex items-center p-3 w-full text-sm font-medium text-gray-500 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), []) ? 'bg-gray-100' : '' }}"
+                                class="flex items-center p-3 w-full text-sm font-medium text-gray-500 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'bg-sky-600 text-white' : '' }}"
                                 aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
-                                <i class="text-gray-500 fa-solid fa-house"></i>
+                                <i
+                                    class="text-gray-500 fa-solid fa-envelope {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'text-white' : '' }}"></i>
                                 <span
-                                    class="flex-1 ml-3 text-sm text-left whitespace-nowrap {{ in_array(Route::currentRouteName(), []) ? 'text-gray-900' : '' }} group-hover:text-gray-900 font-normal">Surat
+                                    class="flex-1 ml-3 text-sm text-left whitespace-nowrap {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'text-white' : '' }} group-hover:text-gray-900 font-normal">Surat
                                     Masuk</span>
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
                             <ul id="dropdown-pages"
-                                class="py-2 space-y-2 {{ in_array(Route::currentRouteName(), []) ? 'block' : 'hidden' }}">
+                                class="py-2 space-y-2 {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'block' : 'hidden' }}">
                                 <li>
                                     <span>
-                                        <a href=""
-                                            class="flex items-center p-3 pl-11 w-full text-sm font-normal text-gray-500 hover:text-gray-900 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), []) ? 'border border-gray-300' : '' }}">Surat
+                                        <a href="{{ route('surat-masuk.index') }}"
+                                            class="flex items-center p-3 pl-9 w-full text-sm font-normal text-gray-500 hover:text-gray-900 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'border border-gray-300' : '' }}">Surat
                                             Masuk</a>
                                     </span>
                                 </li>
                                 <li>
                                     <span>
                                         <a href=""
-                                            class="flex items-center w-full p-3 text-sm font-normal transition duration-75 rounded-md pl-11 text-gray-500 hover:text-gray-900 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), []) ? 'border border-gray-300' : '' }}">Disposisi</a>
+                                            class="flex items-center w-full p-3 text-sm font-normal transition duration-75 rounded-md pl-9 text-gray-500 hover:text-gray-900 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), []) ? 'border border-gray-300' : '' }}">Disposisi</a>
                                     </span>
                                 </li>
                                 <li>
                                     <span>
                                         <a href=""
-                                            class="flex items-center w-full p-3 text-sm font-normal transition duration-75 rounded-md pl-11 text-gray-500 hover:text-gray-900 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), []) ? 'border border-gray-300' : '' }}">Tembusan</a>
+                                            class="flex items-center w-full p-3 text-sm font-normal transition duration-75 rounded-md pl-9 text-gray-500 hover:text-gray-900 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), []) ? 'border border-gray-300' : '' }}">Tembusan</a>
                                     </span>
                                 </li>
                             </ul>
