@@ -2,19 +2,17 @@
 @section('title', 'Kelola Pengguna')
 @section('content')
     {{-- Breadcumb start --}}
-    <div class="mb-6">
-        <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-                <li class="inline-flex gap-2 items-center">
-                    <i class="fa-solid fa-home text-sm text-gray-500"></i>
-                    <a href="#"
-                        class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white">
-                        Kelola Pengguna
-                    </a>
-                </li>
-            </ol>
-        </nav>
-    </div>
+    <nav class="flex mb-6" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+                <a href="#"
+                    class="inline-flex items-center text-sm text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <i class="me-2.5 text-gray-700 fa-solid fa-user-gear"></i>
+                    Kelola Pengguna
+                </a>
+            </li>
+        </ol>
+    </nav>
     {{-- Breadcumb end --}}
 
     {{-- Alert aksi start --}}
@@ -45,20 +43,18 @@
     {{-- Alert aksi end --}}
 
     {{-- Tabel content start --}}
-    <div class=" bg-white border border-gray-200 rounded-md">
+    <div class="bg-white border border-gray-200 rounded-md ">
         <!-- Button registrasi surat masuk -->
-        <div class="flex flex-wrap items-center justify-between p-5 gap-3 mb-6 border-b border-gray-200 pb-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 p-5 pb-4 mb-6 border-b border-gray-200">
             <h3 class="font-bold text-gray-700">Daftar Pengguna</h3>
-            <a href="{{ route('kelola-pengguna.create') }}"
-                class="block w-fit ms-auto text-white bg-sky-600 hover:bg-sky-700 duration-200 rounded-md text-sm px-5 py-3 text-center"
-                type="button">
+            <a href="{{ route('kelola-pengguna.create') }}" class="btn-blue" type="button">
                 <i class="fa-solid fa-plus me-1.5"></i>Tambah
             </a>
         </div>
         {{-- Table wrapper --}}
         <div class="relative px-5 py-2.5">
             <table id="mytable" class="!w-full">
-                <thead class="text-sm text-gray-700  dark:bg-gray-700 dark:text-gray-400">
+                <thead class="text-sm text-gray-700 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col"
                             class="!px-3 !font-semibold !text-left text-gray-700 bg-slate-50 border-0 !py-6 whitespace-nowrap">

@@ -2,26 +2,27 @@
 @section('title', 'Kelola Pengguna')
 @section('content')
     {{-- Breadcumb start --}}
-    <div class="mb-6">
-        <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-                <li class="inline-flex gap-2 items-center">
-                    <i class="fa-solid fa-home text-sm text-gray-500"></i>
-                    <a href="{{ route('kelola-pengguna.index') }}"
-                        class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white">
-                        Kelola Pengguna
-                    </a>
-                </li>
-                <li class="inline-flex gap-2 items-center">
-                    <a href="#"
-                        class="inline-flex items-center text-sm text-gray-300 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white">
-                        / Tambah Pengguna
-                    </a>
-                </li>
-            </ol>
-        </nav>
-    </div>
-    {{-- Breadcumb end --}}
+    <nav class="flex mb-6" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+                <a href="{{ route('kelola-pengguna.index') }}"
+                    class="inline-flex items-center text-sm text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <i class="me-2.5 text-gray-700 fa-solid fa-user-gear"></i>
+                    Kelola Pengguna
+                </a>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="w-3 h-3 mx-1 text-gray-400 rtl:rotate-180" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="text-sm text-gray-400 ms-1 md:ms-2 dark:text-gray-400">Tambah Data Pengguna</span>
+                </div>
+            </li>
+        </ol>
+    </nav>
 
     {{-- Alert aksi start --}}
     @if (session('status'))
@@ -48,26 +49,40 @@
             </ul>
         </div>
     @endif
-    {{-- Alert aksi end --}}
 
     {{-- Tabel content start --}}
-    <div class=" bg-white border border-gray-200 rounded-md">
+    <div class="bg-white border border-gray-200 rounded-md ">
         <!-- Button registrasi surat masuk -->
-        <div class="flex flex-wrap items-center justify-between p-5 gap-3 border-b border-gray-200 pb-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 p-5 pb-4 border-b border-gray-200">
             <h3 class="font-bold text-gray-700">Form Tambah Data Pengguna</h3>
         </div>
         {{-- Table wrapper --}}
         <div class="relative pt-6">
             <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="grid grid-cols-1 gap-4 md:grid-cols-2 px-5">
+                <div class="grid grid-cols-1 gap-4 px-5 md:grid-cols-2">
                     <div class="">
                         <div class="mb-5">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                                 Pengguna</label>
-                            <input type="email" id="email" name="email"
+                            <input type="text" id="text" name="text" class="form-input" required autofocus
+                                placeholder="Contoh : Hizkiel Putra Pakubumi" />
+                        </div>
+                        <div class="mb-5">
+                            <label for="id_jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Jabatan</label>
+                            <select id="id_jabatan" name="id_jabatan"
                                 class="border border-gray-300 text-gray-800 !ring-0 placeholder:text-gray-400 bg-slate-50 w-full p-3 text-sm rounded-lg "
-                                required autofocus placeholder="Masukkan nama pengguna" />
+                                <option value="">---</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="mb-5">
+                            <label for="name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required autofocus
+                                placeholder="Contoh : hizkiel@gmail.com" />
                         </div>
                         <div class="mb-5">
                             <label for="id_jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -79,11 +94,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-end gap-2 border-t border-gray-200 p-5 mt-6">
-                    <a href="{{ route('kelola-pengguna.index') }}"
-                        class="block w-fit ms-auto text-gray-600 hover:bg-gray-100 duration-200 rounded-md text-sm px-5 py-3 text-center border border-gray-300">Batal</a>
+                <div class="flex justify-end gap-2 p-5 mt-6 border-t border-gray-200">
+                    <a href="{{ route('kelola-pengguna.index') }}" class="btn-white">Batal</a>
                     <button
-                        class="block w-fit text-white bg-sky-600 hover:bg-sky-700 duration-200 rounded-md text-sm px-5 py-3 text-center"
+                        class="block px-5 py-3 text-sm text-center text-white duration-200 rounded-md w-fit bg-sky-600 hover:bg-sky-700"
                         type="button">
                         Tambah
                     </button>

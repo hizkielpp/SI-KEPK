@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div class="grid h-screen grid-cols-1 lg:grid-cols-2 p-6 font-rubik">
+    <div class="grid h-screen grid-cols-1 p-6 lg:grid-cols-2 font-rubik">
         {{-- Form --}}
         <section class="grid place-items-center ">
             <div class="mx-auto lg:w-3/4 2xl:w-1/2">
@@ -60,27 +60,25 @@
                         @csrf
                         <div class="mb-5">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-800">Email</label>
-                            <input type="email" id="email" name="email"
-                                class="border border-gray-300 text-gray-800 !ring-0 placeholder:text-gray-400 bg-slate-50 w-full p-4 text-sm rounded-lg "
-                                required autofocus placeholder="Masukkan email anda" />
+                            <input type="email" id="email" name="email" class="form-input-lg" required autofocus
+                                placeholder="Masukkan email anda" />
                         </div>
                         <div class="mb-5">
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-800">Password</label>
                             <div class="relative">
-                                <input type="password" id="password" name="password"
-                                    class="border border-gray-300 text-gray-800 !ring-0 placeholder:text-gray-400 bg-slate-50 w-full p-4 text-sm rounded-lg "
-                                    required placeholder="Masukkan password anda" />
+                                <input type="password" id="password" name="password" class="form-input-lg " required
+                                    placeholder="Masukkan password anda" />
                                 <i class="absolute text-gray-500 -translate-y-1/2 fa-solid fa-eye right-4 top-1/2"
                                     onclick="showPass()" id="passIcon"></i>
                             </div>
                         </div>
                         <button type="submit"
-                            class="block mt-8 w-full bg-sky-600 text-white hover:bg-sky-700 duration-200 font-medium rounded-md text-sm p-4 text-center">Masuk</button>
+                            class="block w-full p-4 mt-8 text-sm font-medium text-center text-white duration-200 rounded-md bg-sky-600 hover:bg-sky-700">Masuk</button>
                     </form>
                 </div>
 
                 {{-- Copyright --}}
-                <div class="flex items-center text-sm text-gray-400 justify-between gap-3">
+                <div class="flex items-center justify-between gap-3 text-sm text-gray-400">
                     <a href="">Sistem Informasi KEPK</a>
                     <p>Copyright 2024</p>
                 </div>
@@ -89,7 +87,7 @@
 
         {{-- Hero --}}
         <section class="hidden lg:grid place-items-center">
-            <div class="bg-gradient-to-r from-sky-500 to-indigo-500 w-full h-full rounded-xl"></div>
+            <div class="w-full h-full bg-gradient-to-r from-sky-500 to-indigo-500 rounded-xl"></div>
         </section>
 
 

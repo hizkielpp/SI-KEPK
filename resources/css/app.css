@@ -3,6 +3,25 @@
 @tailwind utilities;
 
 /* Button */
+.btn-blue {
+    @apply block w-fit ms-auto text-white bg-sky-600 hover:bg-sky-700 border border-sky-600 duration-200 rounded-md text-sm px-5 py-3 text-center;
+}
+.btn-green {
+    @apply block w-fit ms-auto text-white bg-emerald-600 hover:bg-emerald-700 border border-emerald-600 duration-200 rounded-md text-sm px-5 py-3 text-center;
+}
+.btn-white {
+    @apply block w-fit ms-auto text-gray-700 bg-white hover:bg-gray-100 duration-200 border border-gray-300 rounded-md text-sm px-5 py-3 text-center;
+}
+
+/* Input */
+.form-input-lg {
+    @apply border border-gray-300 text-gray-800 !ring-0 placeholder:text-gray-400 focus:border-sky-600 bg-slate-50 w-full p-4 text-sm rounded-lg;
+}
+.form-input {
+    @apply border border-gray-300 text-gray-800 !ring-0 placeholder:text-gray-400 focus:border-sky-600 bg-slate-50 w-full p-3 text-sm rounded-md;
+}
+
+/* Scrollbar */
 .custom-scrollbar {
     @apply relative;
 }

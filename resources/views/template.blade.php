@@ -34,10 +34,10 @@
 </head>
 
 <body class="font-rubik">
-    <div class="antialiased bg-gray- 50 dark:bg-gray-900">
+    <div class="antialiased dark:bg-gray-900">
         {{-- Navbar --}}
         <nav id="navbar"
-            class="duration-300 md:ml-64 bg-white border-b border-gray-200 px-4 py-7 fixed left-0 right-0 top-0 z-50">
+            class="fixed top-0 left-0 right-0 z-50 px-4 duration-300 bg-white border-b border-gray-200 md:ml-64 py-7">
             <div class="flex flex-wrap items-center justify-between">
                 <div class="w-4 cursor-pointer" id="hamburger">
                     <svg xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@
             <div class="h-full px-4 py-5 bg-white dark:bg-gray-800">
                 {{-- Brand --}}
                 <a href="" class="flex items-center gap-3">
-                    <div class="grid w-8 h-8 font-bold bg-sky-700 rounded-full place-items-center text-white">
+                    <div class="grid w-8 h-8 font-bold text-white rounded-full bg-sky-700 place-items-center">
                         S
                     </div>
                     <p id="brand" class="block text-sm font-bold text-gray-700">
@@ -84,7 +84,7 @@
                             <button type="button"
                                 class="flex items-center p-3 w-full text-sm font-medium text-gray-500 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), []) ? 'bg-gray-100' : '' }}"
                                 aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
-                                <i class="fa-solid fa-house text-gray-500"></i>
+                                <i class="text-gray-500 fa-solid fa-house"></i>
                                 <span
                                     class="flex-1 ml-3 text-sm text-left whitespace-nowrap {{ in_array(Route::currentRouteName(), []) ? 'text-gray-900' : '' }} group-hover:text-gray-900 font-normal">Surat
                                     Masuk</span>
@@ -115,7 +115,7 @@
                         </li>
 
                         {{-- Kelola pengguna --}}
-                        <p class="p-2 text-sm text-gray-500 pt-6">LAINNYA</p>
+                        <p class="p-2 pt-6 text-sm text-gray-500">LAINNYA</p>
                         <li>
                             <a href="{{ route('kelola-pengguna.index') }}"
                                 class="flex items-center p-3 text-sm font-medium  hover:text-gray-900 rounded-md dark:text-white hover:bg-gray-100 duration-200 dark:hover:bg-gray-700 group {{ in_array(Route::currentRouteName(), ['kelola-pengguna.index', 'kelola-pengguna.create']) ? 'bg-sky-600 hover:bg-sky-700' : '' }}">
@@ -129,16 +129,17 @@
                     </ul>
                     {{-- User --}}
                     <ul>
-                        <li class='duration-300 pb-5 py-3 flex items-center justify-between'>
+                        <li
+                            class='flex items-center justify-between p-3 mb-6 duration-300 border border-gray-100 rounded-md bg-gray-50'>
                             <div class='flex items-center gap-3'>
                                 <div class='relative'>
                                     <div
-                                        class="grid w-8 h-8 font-bold text-white bg-sky-600 rounded-full place-items-center ">
+                                        class="grid w-8 h-8 font-bold text-white rounded-full bg-sky-600 place-items-center ">
                                         H
                                     </div>
                                 </div>
                                 <div class="">
-                                    <p class="font-semibold text-sm text-gray-700">Hizkiel</p>
+                                    <p class="text-sm font-semibold text-gray-600">Hizkiel</p>
                                     <p class="text-sm text-gray-400">Administator</p>
                                 </div>
                             </div>
@@ -151,7 +152,7 @@
             </div>
         </aside>
 
-        <main class="h-auto p-4 pt-24 duration-300 bg-slate-100 md:ml-64 min-h-[100vh]" id="main">
+        <main class="h-auto p-4 pt-24 duration-300 bg-slate-50 md:ml-64 min-h-[100vh]" id="main">
             @yield('content')
             <footer class="sticky w-full pt-3 mt-12 border-t border-gray-200 top-full">
                 <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-500 sm:justify-between">
