@@ -7,12 +7,13 @@
             <li class="inline-flex items-center">
                 <a href="#"
                     class="inline-flex items-center text-sm text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                    <i class="me-2.5 text-gray-700 fa-solid fa-envelope"></i>
-                    Surat Masuk
+                    <i class="me-2.5 text-gray-700 fa-solid fa-user-gear"></i>
+                    Kelola Pengguna
                 </a>
             </li>
         </ol>
     </nav>
+    {{-- Breadcumb end --}}
 
     {{-- Alert aksi start --}}
     @if (session('status'))
@@ -39,6 +40,7 @@
             </ul>
         </div>
     @endif
+    {{-- Alert aksi end --}}
 
     {{-- Tabel content start --}}
     <div class="bg-white border border-gray-200 rounded-md ">

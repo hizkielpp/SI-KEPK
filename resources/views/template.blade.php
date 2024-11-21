@@ -114,16 +114,25 @@
                                 </li>
                             </ul>
                         </li>
-
+                        {{-- Pengajuan --}}
+                        <li>
+                            <a href="{{ route('proposal.index') }}"
+                                class="flex items-center p-3 text-sm font-medium hover:text-gray-900 rounded-md dark:text-white hover:bg-gray-100 duration-200 dark:hover:bg-gray-700 group {{ in_array(Route::currentRouteName(), ['oke']) ? 'bg-sky-600 hover:bg-sky-700' : '' }}">
+                                <i
+                                    class="fa-solid fa-file text-gray-500 {{ in_array(Route::currentRouteName(), ['oke']) ? 'text-white' : '' }}"></i>
+                                <span
+                                    class="ml-3 text-gray-500 {{ in_array(Route::currentRouteName(), ['oke']) ? 'text-white' : '' }} font-normal">Pengajuan</span>
+                            </a>
+                        </li>
                         {{-- Kelola pengguna --}}
                         <p class="p-2 pt-6 text-sm text-gray-500">LAINNYA</p>
                         <li>
-                            <a href="{{ route('kelola-pengguna.index') }}"
-                                class="flex items-center p-3 text-sm font-medium  hover:text-gray-900 rounded-md dark:text-white hover:bg-gray-100 duration-200 dark:hover:bg-gray-700 group {{ in_array(Route::currentRouteName(), ['kelola-pengguna.index', 'kelola-pengguna.create']) ? 'bg-sky-600 hover:bg-sky-700' : '' }}">
+                            <a href="{{ route('user.index') }}"
+                                class="flex items-center p-3 text-sm font-medium  hover:text-gray-900 rounded-md dark:text-white hover:bg-gray-100 duration-200 dark:hover:bg-gray-700 group {{ in_array(Route::currentRouteName(), ['user.index', 'user.create']) ? 'bg-sky-600 hover:bg-sky-700' : '' }}">
                                 <i
-                                    class="fa-solid fa-user-gear text-gray-500 {{ in_array(Route::currentRouteName(), ['kelola-pengguna.index', 'kelola-pengguna.create']) ? 'text-white' : '' }}"></i>
+                                    class="fa-solid fa-user-gear text-gray-500 {{ in_array(Route::currentRouteName(), ['user.index', 'user.create']) ? 'text-white' : '' }}"></i>
                                 <span
-                                    class="ml-3 text-gray-500 {{ in_array(Route::currentRouteName(), ['kelola-pengguna.index', 'kelola-pengguna.create']) ? 'text-white' : '' }} font-normal">Kelola
+                                    class="ml-3 text-gray-500 {{ in_array(Route::currentRouteName(), ['user.index', 'user.create']) ? 'text-white' : '' }} font-normal">Kelola
                                     Pengguna</span>
                             </a>
                         </li>
@@ -144,7 +153,7 @@
                                     <p class="text-sm text-gray-400">Administator</p>
                                 </div>
                             </div>
-                            <a href="/">
+                            <a href="{{ route('logout') }}">
                                 <i class="fa-solid fa-right-from-bracket"></i>
                             </a>
                         </li>

@@ -1,5 +1,5 @@
 @extends('template')
-@section('title', 'Kelola Pengguna')
+@section('title', 'Pengajuan Ethical Clearance')
 @section('content')
     {{-- Breadcumb start --}}
     <nav class="flex mb-6" aria-label="Breadcrumb">
@@ -48,7 +48,7 @@
         <div
             class="flex flex-wrap items-center justify-between gap-3 p-5 pb-4 mb-0 border-b border-gray-200 sm:mb-4 xl:mb-6">
             <h3 class="font-bold text-gray-700">Daftar Pengguna</h3>
-            <a href="{{ route('kelola-pengguna.create') }}" class="btn-blue" type="button">
+            <a href="{{ route('user.create') }}" class="btn-blue" type="button">
                 <i class="fa-solid fa-plus me-1.5"></i>Tambah
             </a>
         </div>

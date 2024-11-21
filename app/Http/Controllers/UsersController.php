@@ -9,12 +9,24 @@ class UsersController extends Controller
    // Display page
    public function index()
    {
-      return view('kelola-pengguna.kelola-pengguna');
+      return view('user.index');
    }
 
-   // Create page
+   // create page
    public function create()
    {
-      return view('kelola-pengguna.tambah-pengguna');
+      return view('user.create');
+   }
+   // add user
+   public function add(Request $request)
+   {
+      $validated = $request->validate([
+         'title' => 'required|unique:posts|max:255',
+         'body' => 'required',
+      ]);
+
+      // The blog post is valid...
+
+      return redirect('/posts');
    }
 }

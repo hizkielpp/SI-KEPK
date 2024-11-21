@@ -1,32 +1,48 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EthicalClearanceController;
+use App\Http\Controllers\ProposalController;
 use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-   return view('auth.login');
+// Authentication
+Route::controller(AuthController::class)->group(function () {
+   Route::get('/', 'login')->name('login');
+   Route::post('/auth', 'auth')->name('auth');
+   Route::get('/logout', 'logout')->name('logout');
 });
 
-// Dashboard
-Route::controller(DashboardController::class)->group(function () {
-   Route::name('dashboard.')->group(function () {
-      Route::get('/dashboard', 'index')->name('index');
-   });
-});
+Route::middleware('auth')->group(function () {
+   // Must authenticated
+   // Dashboard
+   Route::controller(DashboardController::class)->group(function () {
+      // Proposal
+      Route::controller(ProposalController::class)->group(function () {
+         Route::name('proposal.')->group(function () {
+            Route::get('/proposal', 'index')->name('index');
+         });
+      });
+      // Ethical Clearance
+      Route::controller(EthicalClearanceController::class)->group(function () {});
+      // Surat masuk
+      Route::controller(SuratMasukController::class)->group(function () {
+         Route::name('surat-masuk.')->group(function () {
+            Route::get('/surat-masuk', 'index')->name('index');
+         });
+      });
 
-// Surat masuk
-Route::controller(SuratMasukController::class)->group(function () {
-   Route::name('surat-masuk.')->group(function () {
-      Route::get('/surat-masuk', 'index')->name('index');
-   });
-});
-
-// Users
-Route::controller(UsersController::class)->group(function () {
-   Route::name('kelola-pengguna.')->group(function () {
-      Route::get('/kelola-pengguna', 'index')->name('index');
-      Route::get('/kelola-pengguna/tambah-pengguna', 'create')->name('create');
+      // Users
+      Route::controller(UsersController::class)->group(function () {
+         Route::name('user.')->group(function () {
+            Route::get('/user', 'index')->name('index');
+            Route::get('/user/tambah-pengguna', 'create')->name('create');
+         });
+      });
+      Route::name('dashboard.')->group(function () {
+         Route::get('/dashboard', 'index')->name('index');
+      });
    });
 });

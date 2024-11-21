@@ -56,7 +56,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="POST" action="" class="mt-8">
+                    <form method="POST" action="{{ route('auth') }}" class="mt-8">
                         @csrf
                         <div class="mb-5">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-800">Email</label>

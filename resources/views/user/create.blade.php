@@ -5,7 +5,7 @@
     <nav class="flex mb-6" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li class="inline-flex items-center">
-                <a href="{{ route('kelola-pengguna.index') }}"
+                <a href="{{ route('user.index') }}"
                     class="inline-flex items-center text-sm text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                     <i class="me-2.5 text-gray-700 fa-solid fa-user-gear"></i>
                     Kelola Pengguna
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="flex justify-end gap-2 p-5 mt-6 border-t border-gray-200">
-                    <a href="{{ route('kelola-pengguna.index') }}" class="btn-white">Batal</a>
+                    <a href="{{ route('user.index') }}" class="btn-white">Batal</a>
                     <button
                         class="block px-5 py-3 text-sm text-center text-white duration-200 rounded-md w-fit bg-sky-600 hover:bg-sky-700"
                         type="button">
