@@ -16,4 +16,9 @@ class ProposalController extends Controller
     {
         return view('proposal.create');
     }
+    // insert function
+    public function insert(Request $request)
+    {
+        return $request;
+    }
 }

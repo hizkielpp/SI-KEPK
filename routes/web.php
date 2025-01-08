@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
          Route::name('proposal.')->group(function () {
             Route::get('/proposal', 'index')->name('index');
             Route::get('/proposal/create', 'create')->name('create');
+            Route::post('/proposal/insert', 'insert')->name('insert');
          });
       });
       // Ethical Clearance

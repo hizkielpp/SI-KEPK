@@ -58,7 +58,6 @@
         </div>
         {{-- Table wrapper --}}
         <div class="relative pt-6">
-
             <div class="grid grid-cols-1 gap-4 px-5 mb-4">
                 <p class="text-lg font-bold text-gray-700 text-center">Protokol Etik Penelitian Kesehatan
                     Yang Mengikutsertakan Manusia Sebagai Subyek
@@ -74,48 +73,96 @@
                     IC: CIOMS 2016 - Lampiran 2
                 </p>
             </div>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('proposal.insert') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="grid grid-cols-1 gap-4 px-5 md:grid-cols-2">
-                    <div class="">
-                        <div class="mb-5">
+                <div class="grid grid-cols-1 gap-4 px-5">
+                    {{-- Detail form template --}}
+                    <div class="mb-2">
+                        <div>
                             A. Judul Penelitian (p-protokol no 1)*
-                            <input type="text" id="text" name="detail_form[]" class="form-input" required autofocus
-                                placeholder="Judul penelitian" />
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
-                                Pengguna</label>
+                            <input type="text" id="text" name="detail_form[0][value]" class="form-input" required
+                                autofocus placeholder="Judul penelitian" />
                         </div>
-                        <div class="mb-5">
-                            <label for="id_jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                Jabatan</label>
-                            <select id="id_jabatan" name="id_jabatan"
-                                class="border border-gray-300 text-gray-800 !ring-0 placeholder:text-gray-400 bg-slate-50 w-full p-3 text-sm rounded-lg "
-                                <option value="">---</option>
-                            </select>
+                        <div class="flex">
+                            <label for="lokasi_penelitian" class="text-sm font-medium text-gray-900 dark:text-white ">
+                                1. Lokasi Penelitian :</label>
+                            <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input ">
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                2. Waktu Penelitian direncanakan (mulai - selesai): </label>
+                            <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input">
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                3. Apakah penelitian ini multi-senter </label>
+                            <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input">
                         </div>
                     </div>
-                    <div class="">
-                        <div class="mb-5">
-                            <label for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" required autofocus
-                                placeholder="Contoh : hizkiel@gmail.com" />
+                    {{-- Detail form template --}}
+                    <div class="mb-2">
+                        <div>
+                            A. Judul Penelitian (p-protokol no 1)*
+                            <input type="text" id="text" name="detail_form[1][value]" class="form-input" required
+                                autofocus placeholder="Judul penelitian" />
                         </div>
-                        <div class="mb-5">
-                            <label for="id_jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                Jabatan</label>
-                            <select id="id_jabatan" name="id_jabatan"
-                                class="border border-gray-300 text-gray-800 !ring-0 placeholder:text-gray-400 bg-slate-50 w-full p-3 text-sm rounded-lg "
-                                <option value="">---</option>
-                            </select>
+                        <div class="flex">
+                            <label for="lokasi_penelitian" class="text-sm font-medium text-gray-900 dark:text-white ">
+                                1. Lokasi Penelitian :</label>
+                            <input id="lokasi_penelitian" name="detail_form[1][input][]" class="form-input ">
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                2. Waktu Penelitian direncanakan (mulai - selesai): </label>
+                            <input id="lokasi_penelitian" name="detail_form[1][input][]" class="form-input">
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                3. Apakah penelitian ini multi-senter </label>
+                            <input id="lokasi_penelitian" name="detail_form[1][input][]" class="form-input">
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                4. Jika Multi senter apakah sudah mendapatkan persetujuan etik dari senter/institusi yang
+                                lain (lampirkan jika sudah) </label>
+                            <input id="lokasi_penelitian" name="detail_form[1][input][]" class="form-input">
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div>
+                            A. Judul Penelitian (p-protokol no 1)*
+                            <input type="text" id="text" name="detail_form[2][value]" class="form-input" required
+                                autofocus placeholder="Judul penelitian" />
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian" class="text-sm font-medium text-gray-900 dark:text-white ">
+                                1. Lokasi Penelitian :</label>
+                            <input id="lokasi_penelitian" name="detail_form[2][input][]" class="form-input ">
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                2. Waktu Penelitian direncanakan (mulai - selesai): </label>
+                            <input id="lokasi_penelitian" name="detail_form[2][input][]" class="form-input">
+                        </div>
+                        <div class="flex">
+                            <label for="lokasi_penelitian"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                3. Apakah penelitian ini multi-senter </label>
+                            <input id="lokasi_penelitian" name="detail_form[2][input][]" class="form-input">
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-end gap-2 p-5 mt-6 border-t border-gray-200">
-                    <a href="{{ route('user.index') }}" class="btn-white">Batal</a>
+                    <a href="{{ route('proposal.index') }}" class="btn-white">Batal</a>
                     <button
                         class="block px-5 py-3 text-sm text-center text-white duration-200 rounded-md w-fit bg-sky-600 hover:bg-sky-700"
-                        type="button">
+                        type="submit">
                         Tambah
                     </button>
                 </div>
