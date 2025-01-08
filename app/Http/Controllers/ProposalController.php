@@ -11,4 +11,9 @@ class ProposalController extends Controller
     {
         return view('proposal.index');
     }
+    // create function
+    public function create()
+    {
+        return view('proposal.create');
+    }
 }

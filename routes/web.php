@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
       Route::controller(ProposalController::class)->group(function () {
          Route::name('proposal.')->group(function () {
             Route::get('/proposal', 'index')->name('index');
+            Route::get('/proposal/create', 'create')->name('create');
          });
       });
       // Ethical Clearance

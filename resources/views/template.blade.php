@@ -79,23 +79,23 @@
                                     class="ml-3 text-gray-500 {{ in_array(Route::currentRouteName(), ['dashboard.index']) ? 'text-white' : '' }} font-normal">Dashboard</span>
                             </a>
                         </li>
-                        {{-- Surat masuk --}}
-                        <li>
+                        {{-- Proposal --}}
+                        {{-- <li>
                             <button type="button"
                                 class="flex items-center p-3 w-full text-sm font-medium text-gray-500 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'bg-sky-600 text-white' : '' }}"
                                 aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
                                 <i
-                                    class="text-gray-500 fa-solid fa-envelope {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'text-white' : '' }}"></i>
+                                    class="text-gray-500 fa-solid fa-envelope {{ in_array(Route::currentRouteName(), ['proposal.index']) ? 'text-white' : '' }}"></i>
                                 <span
-                                    class="flex-1 ml-3 text-sm text-left whitespace-nowrap {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'text-white' : '' }} group-hover:text-gray-900 font-normal">Surat
+                                    class="flex-1 ml-3 text-sm text-left whitespace-nowrap {{ in_array(Route::currentRouteName(), ['proposal.index']) ? 'text-white' : '' }} group-hover:text-gray-900 font-normal">Surat
                                     Masuk</span>
                                 <i class="fa-solid fa-angle-down"></i>
                             </button>
                             <ul id="dropdown-pages"
-                                class="py-2 space-y-2 {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'block' : 'hidden' }}">
+                                class="py-2 space-y-2 {{ in_array(Route::currentRouteName(), ['proposal.index']) ? 'block' : 'hidden' }}">
                                 <li>
                                     <span>
-                                        <a href="{{ route('surat-masuk.index') }}"
+                                        <a href="{{ route('proposal.index') }}"
                                             class="flex items-center p-3 pl-9 w-full text-sm font-normal text-gray-500 hover:text-gray-900 rounded-md transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 {{ in_array(Route::currentRouteName(), ['surat-masuk.index']) ? 'border border-gray-300' : '' }}">Surat
                                             Masuk</a>
                                     </span>
@@ -113,15 +113,15 @@
                                     </span>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- Pengajuan --}}
                         <li>
                             <a href="{{ route('proposal.index') }}"
-                                class="flex items-center p-3 text-sm font-medium hover:text-gray-900 rounded-md dark:text-white hover:bg-gray-100 duration-200 dark:hover:bg-gray-700 group {{ in_array(Route::currentRouteName(), ['oke']) ? 'bg-sky-600 hover:bg-sky-700' : '' }}">
+                                class="flex items-center p-3 text-sm font-medium hover:text-gray-900 rounded-md dark:text-white hover:bg-gray-100 duration-200 dark:hover:bg-gray-700 group {{ in_array(Route::currentRouteName(), ['proposal.index', 'proposal.create']) ? 'bg-sky-600 hover:bg-sky-700' : '' }}">
                                 <i
-                                    class="fa-solid fa-file text-gray-500 {{ in_array(Route::currentRouteName(), ['oke']) ? 'text-white' : '' }}"></i>
+                                    class="fa-solid fa-file text-gray-500 {{ in_array(Route::currentRouteName(), ['proposal.index', 'proposal.create']) ? 'text-white' : '' }}"></i>
                                 <span
-                                    class="ml-3 text-gray-500 {{ in_array(Route::currentRouteName(), ['oke']) ? 'text-white' : '' }} font-normal">Pengajuan</span>
+                                    class="ml-3 text-gray-500 {{ in_array(Route::currentRouteName(), ['proposal.index', 'proposal.create']) ? 'text-white' : '' }} font-normal">Pengajuan</span>
                             </a>
                         </li>
                         {{-- Kelola pengguna --}}
