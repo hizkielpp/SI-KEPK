@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_forms', function (Blueprint $table) {
+        Schema::create('inputs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('form_id');
+            $table->unsignedBigInteger('detail_form_id');
             //define foreign key Constraint
-            $table->foreign('form_id')->references('id')->on('forms')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('name');
-            $table->string('value')->nullable();
+            $table->foreign('detail_form_id')->references('id')->on('detail_forms')->onDelete('cascade')->onUpdate('cascade');
+            $table->text('name');
+            $table->string('type');
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('detail_forms');
+        Schema::dropIfExists('inputs');
     }
 };
