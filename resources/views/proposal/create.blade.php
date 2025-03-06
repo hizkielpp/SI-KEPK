@@ -78,28 +78,18 @@
                 <div class="grid grid-cols-1 gap-4 px-5">
                     {{-- Detail form template --}}
                     <div class="mb-2">
-                        <div>
-                            A. Judul Penelitian (p-protokol no 1)*
-                            <input type="text" id="text" name="detail_form[0][value]" class="form-input" required
-                                autofocus placeholder="Judul penelitian" />
-                        </div>
-                        <div class="flex">
-                            <label for="lokasi_penelitian" class="text-sm font-medium text-gray-900 dark:text-white ">
-                                1. Lokasi Penelitian :</label>
-                            <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input ">
-                        </div>
-                        <div class="flex">
-                            <label for="lokasi_penelitian"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                2. Waktu Penelitian direncanakan (mulai - selesai): </label>
-                            <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input">
-                        </div>
-                        <div class="flex">
-                            <label for="lokasi_penelitian"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                3. Apakah penelitian ini multi-senter </label>
-                            <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input">
-                        </div>
+                        A. Judul Penelitian (p-protokol no 1)*
+                        <input type="text" id="text" name="detail_form[0][value]" class="form-input" required
+                            autofocus placeholder="Judul penelitian" />
+                        <label for="lokasi_penelitian" class="text-sm font-medium text-gray-900 dark:text-white ">
+                            1. Lokasi Penelitian :</label>
+                        <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input ">
+                        <label for="lokasi_penelitian" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            2. Waktu Penelitian direncanakan (mulai - selesai): </label>
+                        <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input">
+                        <label for="lokasi_penelitian" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            3. Apakah penelitian ini multi-senter </label>
+                        <input id="lokasi_penelitian" name="detail_form[0][input][]" class="form-input">
                     </div>
                     {{-- Detail form template --}}
                     <div class="mb-2">
